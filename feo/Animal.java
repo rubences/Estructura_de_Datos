@@ -1,6 +1,10 @@
 public class Animal extends Organismo {
-    public Animal(int posicionX, int posicionY, int salud, int edad, boolean estadoReproductivo) {
-        super(posicionX, posicionY, salud, edad, estadoReproductivo);
+    private boolean esPolinizador;
+
+    public Animal(int posicionX, int posicionY, int salud, int edad, boolean estadoReproductivo, String dieta, boolean esPolinizador) {
+        super(posicionX, posicionY, salud, edad, estadoReproductivo, dieta);
+        this.dieta = dieta;
+        this.esPolinizador = esPolinizador;
     }
 
     @Override
@@ -17,14 +21,13 @@ public class Animal extends Organismo {
         } else if (otro instanceof Planta) {
             Planta otraPlanta = (Planta) otro;
             if (this.salud < otraPlanta.salud) {
-            consumir(otraPlanta);
+                consumir(otraPlanta);
             } else {
-            ignorar(otraPlanta);
+                ignorar(otraPlanta);
             }
         } else {
             System.out.println("Error: Tipo de organismo desconocido.");
         }
-               
     }
 
     private void reproducirse(Animal otroAnimal) {
@@ -37,7 +40,7 @@ public class Animal extends Organismo {
         int nuevaEdad = 0; // La edad del nuevo animal es 0
         boolean nuevoEstadoReproductivo = false; // El nuevo animal no es reproductivo inicialmente
 
-        Animal nuevoAnimal = new Animal(nuevaPosicionX, nuevaPosicionY, nuevaSalud, nuevaEdad, nuevoEstadoReproductivo);
+        Animal nuevoAnimal = new Animal(nuevaPosicionX, nuevaPosicionY, nuevaSalud, nuevaEdad, nuevoEstadoReproductivo, this.dieta, this.esPolinizador);
         System.out.println("Se ha creado un nuevo animal en la posición (" + nuevaPosicionX + ", " + nuevaPosicionY + ").");
     }
 
@@ -76,5 +79,14 @@ public class Animal extends Organismo {
         System.out.println("El animal está ignorando la planta.");
     }
 
+    public boolean esHerbivoro() {
+        // Lógica para determinar si el animal es herbívoro
+        // Ejemplo: si el animal tiene una propiedad que indica su dieta
+        return this.dieta.equals("herbívoro");
+    }
 
+    public boolean esPolinizador() {
+        // Lógica para determinar si el animal es polinizador
+        return this.esPolinizador;
+    }
 }
