@@ -14,12 +14,44 @@ public class Simulador {
 
     public void simularCiclo() {
         for (Organismo organismo : organismos) {
-            // Simular crecimiento y reproducción
+            if (organismo instanceof Planta) {
+                ((Planta) organismo).crecer();
+                ((Planta) organismo).reproducirse();
+            } else if (organismo instanceof Animal) {
+                ((Animal) organismo).crecer();
+                ((Animal) organismo).reproducirse();
+            }
+
             // Simular eventos aleatorios
+            if (random.nextBoolean()) {
+                organismo.enfermar();
+            } else {
+                organismo.migrar();
+            }
         }
     }
 
     public void mostrarEstadisticas() {
-        // Calcular y mostrar estadísticas del ecosistema
+        int totalOrganismos = organismos.size();
+        int totalPlantas = 0;
+        int totalAnimales = 0;
+        int organismosEnfermos = 0;
+
+        for (Organismo organismo : organismos) {
+            if (organismo instanceof Planta) {
+                totalPlantas++;
+            } else if (organismo instanceof Animal) {
+                totalAnimales++;
+            }
+            if (organismo.estaEnfermo()) {
+                organismosEnfermos++;
+            }
+        }
+
+        System.out.println("Estadísticas del ecosistema:");
+        System.out.println("Total de organismos: " + totalOrganismos);
+        System.out.println("Total de plantas: " + totalPlantas);
+        System.out.println("Total de animales: " + totalAnimales);
+        System.out.println("Organismos enfermos: " + organismosEnfermos);
     }
 }

@@ -1,7 +1,7 @@
 public class Animal extends Organismo {
     private boolean esPolinizador;
+    private boolean estaEnfermo;
 
-    public Animal(int posicionX, int posicionY, int salud, int edad, boolean estadoReproductivo, String dieta, boolean esPolinizador) {
         super(posicionX, posicionY, salud, edad, estadoReproductivo, dieta);
         this.dieta = dieta;
         this.esPolinizador = esPolinizador;
@@ -29,7 +29,7 @@ public class Animal extends Organismo {
             System.out.println("Error: Tipo de organismo desconocido.");
         }
     }
-
+    @Override
     private void reproducirse(Animal otroAnimal) {
         // Lógica para la reproducción
         System.out.println("Los animales se están reproduciendo.");
@@ -88,5 +88,28 @@ public class Animal extends Organismo {
     public boolean esPolinizador() {
         // Lógica para determinar si el animal es polinizador
         return this.esPolinizador;
+    }
+
+    public void migrar() {
+        // Lógica para la migración
+        // Ejemplo: mover el animal a una nueva posición aleatoria
+        Random random = new Random();
+        this.posicionX = random.nextInt(100); // Nueva posición X aleatoria entre 0 y 99
+        this.posicionY = random.nextInt(100); // Nueva posición Y aleatoria entre 0 y 99
+        System.out.println("El animal ha migrado a la posición (" + this.posicionX + ", " + this.posicionY + ").");
+    }
+
+    @Override
+    public void crecer() {
+        // Lógica para el crecimiento de un animal
+        this.edad++;
+        System.out.println("El animal ha crecido. Edad: " + this.edad);
+    }
+
+
+    @Override
+    public void enfermar() {
+        // Lógica para la enfermedad de un animal
+        System.out.println("El animal ha enfermado.");
     }
 }

@@ -55,4 +55,32 @@ public abstract class Organismo {
     public void setEstadoReproductivo(boolean estadoReproductivo) {
         this.estadoReproductivo = estadoReproductivo;
     }
+
+    @Override
+    public String toString() {
+        return "Organismo [posicionX=" + posicionX + ", posicionY=" + posicionY + ", salud=" + salud + ", edad=" + edad
+                + ", estadoReproductivo=" + estadoReproductivo + "]";
+    }
+
+    public void incrementarSalud(int cantidad) {
+        this.salud += cantidad;
+    }
+
+    public void decrementarSalud(int cantidad) {
+        this.salud -= cantidad;
+    }
+
+    public void crecer() {
+        this.edad++;
+    }
+
+    public void reproducirse(Organismo otro) {
+        System.out.println("Los organismos se están reproduciendo.");
+    }
+
+    public void enfermar() {
+        System.out.println("El organismo ha enfermado.");
+    }
+    
+
 }
