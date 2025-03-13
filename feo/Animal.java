@@ -1,12 +1,16 @@
 public class Animal extends Organismo {
     private boolean esPolinizador;
     private boolean estaEnfermo;
-
-        super(posicionX, posicionY, salud, edad, estadoReproductivo, dieta);
+    private String dieta;   
+   
+   public Animal(int posicionX, int posicionY, int salud, int edad, boolean estadoReproductivo, String dieta, boolean esPolinizador, boolean estaEnfermo) {
+    super(posicionX, posicionY, salud, edad, estadoReproductivo);
         this.dieta = dieta;
         this.esPolinizador = esPolinizador;
-    }
+        this.estaEnfermo = false;
 
+    
+}
     @Override
     public void interactuar(Organismo otro) {
         if (otro instanceof Animal) {
