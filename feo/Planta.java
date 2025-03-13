@@ -40,4 +40,22 @@ public class Planta extends Organismo {
             System.out.println("El animal no interactúa significativamente con la planta.");
         }
     }
+    public void fotosintetizar() {
+        // Lógica para la fotosíntesis
+        this.salud += 10;
+        System.out.println("La planta ha realizado la fotosíntesis y ha ganado salud.");
+    }
+    public void reproducirse() {
+        // Lógica para la reproducción
+        System.out.println("La planta se está reproduciendo.");
+        // Ejemplo de lógica de reproducción: crear una nueva Planta
+        int nuevaPosicionX = this.posicionX + 1;
+        int nuevaPosicionY = this.posicionY + 1;
+        int nuevaSalud = this.salud / 2;
+        int nuevaEdad = 0; // La edad de la nueva planta es 0
+        boolean nuevoEstadoReproductivo = false; // La nueva planta no es reproductiva inicialmente
+
+        Planta nuevaPlanta = new Planta(nuevaPosicionX, nuevaPosicionY, nuevaSalud, nuevaEdad, nuevoEstadoReproductivo);
+        System.out.println("Se ha creado una nueva planta en la posición (" + nuevaPosicionX + ", " + nuevaPosicionY + ").");
+    }
 }

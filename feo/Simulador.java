@@ -17,6 +17,7 @@ public class Simulador {
             if (organismo instanceof Planta) {
                 ((Planta) organismo).crecer();
                 ((Planta) organismo).reproducirse();
+                ((Planta) organismo).fotosintetizar();
             } else if (organismo instanceof Animal) {
                 ((Animal) organismo).crecer();
                 ((Animal) organismo).reproducirse();

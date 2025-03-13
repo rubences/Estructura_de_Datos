@@ -4,10 +4,10 @@ public class Animal extends Organismo {
     private String dieta;   
    
    public Animal(int posicionX, int posicionY, int salud, int edad, boolean estadoReproductivo, String dieta, boolean esPolinizador, boolean estaEnfermo) {
-    super(posicionX, posicionY, salud, edad, estadoReproductivo);
-        this.dieta = dieta;
-        this.esPolinizador = esPolinizador;
-        this.estaEnfermo = false;
+    super(posicionX, posicionY, salud, edad, estadoReproductivo, dieta, esPolinizador, estaEnfermo);
+        //this.dieta = dieta;
+        //this.esPolinizador = esPolinizador;
+        //this.estaEnfermo = false;
 
     
 }
