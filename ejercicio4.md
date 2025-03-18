@@ -1,5 +1,7 @@
 Caso Final Integrador: Desarrollo de un Sistema de Gestión de Publicaciones
 
+https://trifulcas.com/courses/programacion-en-java/lessons/orm/
+
 Contexto: Los estudiantes son parte de un equipo de desarrollo en una startup tecnológica dedicada a la creación de plataformas de publicación y gestión de contenidos digitales. Se les ha encomendado la tarea de desarrollar un sistema de gestión de publicaciones para escritores y periodistas que les permita crear, editar, almacenar y compartir sus trabajos de manera eficiente y segura.
 
 Descripción del Proyecto: El proyecto consistirá en el desarrollo de un sistema interactivo que permita a los usuarios manejar sus textos y colaborar con otros. Los estudiantes aplicarán los conceptos de manejo de archivos, interfaces gráficas de usuario (GUI), y eventos para crear una aplicación robusta y amigable.
