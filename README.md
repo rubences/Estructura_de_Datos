@@ -1,5 +1,7 @@
 # Estructura_de_Datos
 
+https://trifulcas.com/courses/programacion-en-java
+
 
 Caso Final Integrador: Desarrollo de un Simulador de Ecosistema Inteligente
 
